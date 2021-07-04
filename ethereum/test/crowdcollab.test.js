@@ -1,6 +1,7 @@
 const CampaignCreator = artifacts.require("./CampaignCreator.sol");
 const CrowdCollab = artifacts.require("./CrowdCollab.sol");
 
+
 let campaignCreator;
 let campaignAddress;
 let campaign;
@@ -28,8 +29,8 @@ contract("CrowdCollab test", (accounts) => {
 	});
     
 	it('has a manager', async () => {
-    	var managerAddress = await campaign.manager.call();
-    	assert.equal(managerAddress, web3.eth.accounts[0]);
+		var managerAddress = await campaign.manager.call();
+    	assert.equal(managerAddress, accounts[0]);
 	});
     
 	it('has a description', async () => {
@@ -146,16 +147,28 @@ contract("CrowdCollab test", (accounts) => {
     });
 
     it('request recipient receives ether', async () => {
+	
     var regularAccountBalance =  
-        web3.eth.getBalance(accounts[8]).toNumber();
-
+	    await web3.eth.getBalance(accounts[8], function(err, result) {
+			if (err) {
+			  console.log(err)
+			} else {
+			  console.log('Regular balance: ' + result)
+			}
+		});
     var requestRecipientBalance = 
-        web3.eth.getBalance(accounts[9]).toNumber();
-    
+	    await web3.eth.getBalance(accounts[9], function(err, result) {
+			if (err) {
+			  console.log(err)
+			} else {
+			  console.log('Request recipient balance: ' + result)
+			}
+		});
     var request = await campaign.requests.call(0);
-    var amountToReceive = request[1].toNumber();
+	var amountToReceive = request[1].toNumber();
+	console.log('Ammount to receive: ' + amountToReceive)
     assert.equal(
-        amountToReceive + regularAccountBalance, requestRecipientBalance)
+        amountToReceive + parseInt(regularAccountBalance), parseInt(requestRecipientBalance))
     });
 })
 

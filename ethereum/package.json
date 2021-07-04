@@ -20,9 +20,7 @@
   },
   "homepage": "https://github.com/Morpheuslabs-io/qkb-smart-contract#readme",
   "dependencies": {
-    "dotenv": "^6.2.0",
-    "truffle": "^4.1.15",
-    "truffle-hdwallet-provider": "^1.0.3",
-    "truffle-privatekey-provider": "^0.1.0"
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "dotenv": "^6.2.0"
   }
 }

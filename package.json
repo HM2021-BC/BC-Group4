@@ -18,7 +18,7 @@
     "semantic-ui-react": "^0.84.0",
     "truffle-artifactor": "^4.0.3",
     "typedarray-to-buffer": "^3.1.5",
-    "web3": "^1.0.0-beta.40",
+    "web3": "^1.3.5",
     "yaeti": "^1.0.2"
   }
 }
