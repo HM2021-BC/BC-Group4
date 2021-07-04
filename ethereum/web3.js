@@ -3,7 +3,7 @@ import window from 'global'
 
 let web3;
 // const network = "https://rinkeby.infura.io/orDImgKRzwNrVCDrAk5Q";
-const network = "http://bops-t.morpheuslabs.io:28013";
+const network = "http://bops.morpheuslabs.io:21523";
 
 
 if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
