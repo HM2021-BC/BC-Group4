@@ -1,5 +1,5 @@
-var CampaignCreator = artifacts.require("./CampaignCreator");
+var FundraiserCreator = artifacts.require("./FundraiserCreator");
 
 module.exports = function(deployer) {
-  deployer.deploy(CampaignCreator);
+  deployer.deploy(FundraiserCreator);
 };

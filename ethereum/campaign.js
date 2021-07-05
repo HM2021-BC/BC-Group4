@@ -1,6 +1,6 @@
 import web3 from './web3';
-import Campaign from './build/contracts/CrowdCollab.json';
+import Fundraiser from './build/contracts/Fundraiser.json';
 
 export default address => {
-  return new web3.eth.Contract(Campaign.abi, address);
+  return new web3.eth.Contract(Fundraiser.abi, address);
 };

@@ -1,0 +1,1220 @@
+{
+  "contractName": "FundraiserCreator",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "fundraisers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "minContribution",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        }
+      ],
+      "name": "createFundraiser",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDeployedFundraisers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"minContribution\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"name\":\"createFundraiser\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"fundraisers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDeployedFundraisers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Campaign Factory contract to generate Crowdfund smart contract to run Crowd fund\",\"methods\":{\"createFundraiser(uint256,string)\":{\"details\":\"Create new campaign and send default manager is caller\",\"params\":{\"description\":\"description of campaign, purpose of campaign\",\"minContribution\":\"minimum money can contribute for project (in ETH)\"}},\"getDeployedFundraisers()\":{\"details\":\"get all deployed campaigns\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/projects/BC-Group4/ethereum/contracts/FundraiserCreator.sol\":\"FundraiserCreator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/projects/BC-Group4/ethereum/contracts/Fundraiser.sol\":{\"keccak256\":\"0xbd18c10b3a5dfe120c178d1589e9b32c3693ed90d702b22af446ec9ccd3bc667\",\"urls\":[\"bzz-raw://e808be6fe1df0566467efdd47595156a6082ad4a30275530e9066efbb91d8a61\",\"dweb:/ipfs/Qmb9eXczUPEtzzHAvDuF9ya4jDVDREviLHjfxvEPBBZDRN\"]},\"/projects/BC-Group4/ethereum/contracts/FundraiserCreator.sol\":{\"keccak256\":\"0x3113e9d3fcbcef433e2cdeb8e487822ad75586d762af5b34e8d2fceb9306567c\",\"urls\":[\"bzz-raw://b437581820954c6190a12005061968204e7518ec7bd92035f52615f10b1ad283\",\"dweb:/ipfs/QmSKcaGyxhcAEoYLR7iCYJHUrdf7VSXRTPqszVCjCyj3dM\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061088e806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063867d812d14610046578063d66181c51461009e578063f38f72fb1461014d575b600080fd5b61004e610186565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561008a578181015183820152602001610072565b505050509050019250505060405180910390f35b61014b600480360360408110156100b457600080fd5b813591908101906040810160208201356401000000008111156100d657600080fd5b8201836020820111156100e857600080fd5b8035906020019184600183028401116401000000008311171561010a57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101e8945050505050565b005b61016a6004803603602081101561016357600080fd5b50356102f4565b604080516001600160a01b039092168252519081900360200190f35b606060008054806020026020016040519081016040528092919081815260200182805480156101de57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116101c0575b5050505050905090565b60003383836040516101f99061031b565b80846001600160a01b03166001600160a01b0316815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610251578181015183820152602001610239565b50505050905090810190601f16801561027e5780820380516001836020036101000a031916815260200191505b50945050505050604051809103906000f0801580156102a1573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b0392909216919091179055505050565b6000818154811061030157fe5b6000918252602090912001546001600160a01b0316905081565b610531806103298339019056fe608060405234801561001057600080fd5b506040516105313803806105318339818101604052606081101561003357600080fd5b8151602083015160408085018051915193959294830192918464010000000082111561005e57600080fd5b90830190602082018581111561007357600080fd5b825164010000000081118282018810171561008d57600080fd5b82525081516020918201929091019080838360005b838110156100ba5781810151838201526020016100a2565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b038616179055506001829055805161012190600290602084019061012a565b505050506101c5565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016b57805160ff1916838001178555610198565b82800160010185558215610198579182015b8281111561019857825182559160200191906001019061017d565b506101a49291506101a8565b5090565b6101c291905b808211156101a457600081556001016101ae565b90565b61035d806101d46000396000f3fe60806040526004361061007b5760003560e01c8063937e09b11161004e578063937e09b114610163578063b5c9aace14610178578063d7bb99ba14610202578063ed88c68e1461020c5761007b565b80634051ddac1461008057806354f0c897146100c45780636c56e647146100f55780637eee89ba1461013c575b600080fd5b34801561008c57600080fd5b50610095610214565b604080519485526020850193909352838301919091526001600160a01b03166060830152519081900360800190f35b3480156100d057600080fd5b506100d961022d565b604080516001600160a01b039092168252519081900360200190f35b34801561010157600080fd5b506101286004803603602081101561011857600080fd5b50356001600160a01b031661023c565b604080519115158252519081900360200190f35b34801561014857600080fd5b50610151610251565b60408051918252519081900360200190f35b34801561016f57600080fd5b50610151610257565b34801561018457600080fd5b5061018d61025d565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101c75781810151838201526020016101af565b50505050905090810190601f1680156101f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61020a6102e8565b005b61020a61031e565b600154600454600054919247926001600160a01b031690565b6000546001600160a01b031681565b60036020526000908152604090205460ff1681565b60045481565b60015481565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156102e05780601f106102b5576101008083540402835291602001916102e0565b820191906000526020600020905b8154815290600101906020018083116102c357829003601f168201915b505050505081565b60015434116102f657600080fd5b336000908152600360205260409020805460ff19166001908117909155600480549091019055565b6103266102e8565b56fea265627a7a7231582000cbbd917e3d1e401340b4964fc431106064c37be20c347ce0ecbc4b417cd1d564736f6c63430005100032a265627a7a723158203afa85eb3570541ff94872bf8dd4acab514e7fdf222b6a3a3f5e37db097ac7ed64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063867d812d14610046578063d66181c51461009e578063f38f72fb1461014d575b600080fd5b61004e610186565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561008a578181015183820152602001610072565b505050509050019250505060405180910390f35b61014b600480360360408110156100b457600080fd5b813591908101906040810160208201356401000000008111156100d657600080fd5b8201836020820111156100e857600080fd5b8035906020019184600183028401116401000000008311171561010a57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101e8945050505050565b005b61016a6004803603602081101561016357600080fd5b50356102f4565b604080516001600160a01b039092168252519081900360200190f35b606060008054806020026020016040519081016040528092919081815260200182805480156101de57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116101c0575b5050505050905090565b60003383836040516101f99061031b565b80846001600160a01b03166001600160a01b0316815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610251578181015183820152602001610239565b50505050905090810190601f16801561027e5780820380516001836020036101000a031916815260200191505b50945050505050604051809103906000f0801580156102a1573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b0392909216919091179055505050565b6000818154811061030157fe5b6000918252602090912001546001600160a01b0316905081565b610531806103298339019056fe608060405234801561001057600080fd5b506040516105313803806105318339818101604052606081101561003357600080fd5b8151602083015160408085018051915193959294830192918464010000000082111561005e57600080fd5b90830190602082018581111561007357600080fd5b825164010000000081118282018810171561008d57600080fd5b82525081516020918201929091019080838360005b838110156100ba5781810151838201526020016100a2565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b038616179055506001829055805161012190600290602084019061012a565b505050506101c5565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016b57805160ff1916838001178555610198565b82800160010185558215610198579182015b8281111561019857825182559160200191906001019061017d565b506101a49291506101a8565b5090565b6101c291905b808211156101a457600081556001016101ae565b90565b61035d806101d46000396000f3fe60806040526004361061007b5760003560e01c8063937e09b11161004e578063937e09b114610163578063b5c9aace14610178578063d7bb99ba14610202578063ed88c68e1461020c5761007b565b80634051ddac1461008057806354f0c897146100c45780636c56e647146100f55780637eee89ba1461013c575b600080fd5b34801561008c57600080fd5b50610095610214565b604080519485526020850193909352838301919091526001600160a01b03166060830152519081900360800190f35b3480156100d057600080fd5b506100d961022d565b604080516001600160a01b039092168252519081900360200190f35b34801561010157600080fd5b506101286004803603602081101561011857600080fd5b50356001600160a01b031661023c565b604080519115158252519081900360200190f35b34801561014857600080fd5b50610151610251565b60408051918252519081900360200190f35b34801561016f57600080fd5b50610151610257565b34801561018457600080fd5b5061018d61025d565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101c75781810151838201526020016101af565b50505050905090810190601f1680156101f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61020a6102e8565b005b61020a61031e565b600154600454600054919247926001600160a01b031690565b6000546001600160a01b031681565b60036020526000908152604090205460ff1681565b60045481565b60015481565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156102e05780601f106102b5576101008083540402835291602001916102e0565b820191906000526020600020905b8154815290600101906020018083116102c357829003601f168201915b505050505081565b60015434116102f657600080fd5b336000908152600360205260409020805460ff19166001908117909155600480549091019055565b6103266102e8565b56fea265627a7a7231582000cbbd917e3d1e401340b4964fc431106064c37be20c347ce0ecbc4b417cd1d564736f6c63430005100032a265627a7a723158203afa85eb3570541ff94872bf8dd4acab514e7fdf222b6a3a3f5e37db097ac7ed64736f6c63430005100032",
+  "sourceMap": "148:768:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;148:768:1;;;;;;;",
+  "deployedSourceMap": "148:768:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;148:768:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;806:108;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;806:108:1;;;;;;;;;;;;;;;;;476:271;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;476:271:1;;;;;;;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;476:271:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;476:271:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;476:271:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;476:271:1;;-1:-1:-1;476:271:1;;-1:-1:-1;;;;;476:271:1:i;:::-;;207:28;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;207:28:1;;:::i;:::-;;;;-1:-1:-1;;;;;207:28:1;;;;;;;;;;;;;;806:108;861:16;896:11;889:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;889:18:1;;;;;;;;;;;;;;;;;;;;;;;806:108;:::o;476:271::-;568:18;626:10;650:15;679:11;598:102;;;;;:::i;:::-;;;-1:-1:-1;;;;;598:102:1;-1:-1:-1;;;;;598:102:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;598:102:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;712:11:1;27:10:-1;;39:1;23:18;;45:23;;712:28:1;;;;;;;-1:-1:-1;;;;;;712:28:1;-1:-1:-1;;;;;712:28:1;;;;;;;;;;-1:-1:-1;;;476:271:1:o;207:28::-;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;207:28:1;;-1:-1:-1;207:28:1;:::o;148:768::-;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./Fundraiser.sol\";\n\n/**\n* @dev Campaign Factory contract to generate Crowdfund smart contract to run Crowd fund\n*/\ncontract FundraiserCreator {\n\n    // list of campaigns\n    address[] public fundraisers;\n    \n    /**\n    * @dev Create new campaign and send default manager is caller\n    * @param minContribution minimum money can contribute for project (in ETH)\n    * @param description description of campaign, purpose of campaign\n    */\n    function createFundraiser(uint minContribution, string memory description) public {\n        address fundraiser = address (new Fundraiser(\n            msg.sender,\n            minContribution,\n            description\n        ));\n\n        fundraisers.push(fundraiser);\n    }\n\n    /**\n    * @dev get all deployed campaigns\n    */\n    function getDeployedFundraisers() public view returns (address[] memory) {\n        return fundraisers;\n    }\n}\n",
+  "sourcePath": "/projects/BC-Group4/ethereum/contracts/FundraiserCreator.sol",
+  "ast": {
+    "absolutePath": "/projects/BC-Group4/ethereum/contracts/FundraiserCreator.sol",
+    "exportedSymbols": {
+      "FundraiserCreator": [
+        149
+      ]
+    },
+    "id": 150,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 109,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/projects/BC-Group4/ethereum/contracts/Fundraiser.sol",
+        "file": "./Fundraiser.sol",
+        "id": 110,
+        "nodeType": "ImportDirective",
+        "scope": 150,
+        "sourceUnit": 108,
+        "src": "25:26:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          107
+        ],
+        "contractKind": "contract",
+        "documentation": "@dev Campaign Factory contract to generate Crowdfund smart contract to run Crowd fund",
+        "fullyImplemented": true,
+        "id": 149,
+        "linearizedBaseContracts": [
+          149
+        ],
+        "name": "FundraiserCreator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 113,
+            "name": "fundraisers",
+            "nodeType": "VariableDeclaration",
+            "scope": 149,
+            "src": "207:28:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 111,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "207:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 112,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "207:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 138,
+              "nodeType": "Block",
+              "src": "558:189:1",
+              "statements": [
+                {
+                  "assignments": [
+                    121
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 121,
+                      "name": "fundraiser",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 138,
+                      "src": "568:18:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 120,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "568:7:1",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 131,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 125,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 164,
+                              "src": "626:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 126,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "626:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 127,
+                            "name": "minContribution",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 115,
+                            "src": "650:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 128,
+                            "name": "description",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 117,
+                            "src": "679:11:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          ],
+                          "id": 124,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "598:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$_t_contract$_Fundraiser_$107_$",
+                            "typeString": "function (address,uint256,string memory) returns (contract Fundraiser)"
+                          },
+                          "typeName": {
+                            "contractScope": null,
+                            "id": 123,
+                            "name": "Fundraiser",
+                            "nodeType": "UserDefinedTypeName",
+                            "referencedDeclaration": 107,
+                            "src": "602:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Fundraiser_$107",
+                              "typeString": "contract Fundraiser"
+                            }
+                          }
+                        },
+                        "id": 129,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "598:102:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Fundraiser_$107",
+                          "typeString": "contract Fundraiser"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Fundraiser_$107",
+                          "typeString": "contract Fundraiser"
+                        }
+                      ],
+                      "id": 122,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "589:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 130,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "589:112:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "568:133:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 135,
+                        "name": "fundraiser",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 121,
+                        "src": "729:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 132,
+                        "name": "fundraisers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 113,
+                        "src": "712:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 134,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "712:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 136,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "712:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 137,
+                  "nodeType": "ExpressionStatement",
+                  "src": "712:28:1"
+                }
+              ]
+            },
+            "documentation": "@dev Create new campaign and send default manager is caller\n@param minContribution minimum money can contribute for project (in ETH)\n@param description description of campaign, purpose of campaign",
+            "id": 139,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createFundraiser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 115,
+                  "name": "minContribution",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 139,
+                  "src": "502:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 114,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 117,
+                  "name": "description",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 139,
+                  "src": "524:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 116,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "501:49:1"
+            },
+            "returnParameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:0:1"
+            },
+            "scope": 149,
+            "src": "476:271:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 147,
+              "nodeType": "Block",
+              "src": "879:35:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 145,
+                    "name": "fundraisers",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 113,
+                    "src": "896:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 144,
+                  "id": 146,
+                  "nodeType": "Return",
+                  "src": "889:18:1"
+                }
+              ]
+            },
+            "documentation": "@dev get all deployed campaigns",
+            "id": 148,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDeployedFundraisers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "837:2:1"
+            },
+            "returnParameters": {
+              "id": 144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 143,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 148,
+                  "src": "861:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 141,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "861:7:1",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 142,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "861:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "860:18:1"
+            },
+            "scope": 149,
+            "src": "806:108:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 150,
+        "src": "148:768:1"
+      }
+    ],
+    "src": "0:917:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/projects/BC-Group4/ethereum/contracts/FundraiserCreator.sol",
+      "exportedSymbols": {
+        "FundraiserCreator": [
+          149
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 109,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 108,
+          "absolutePath": "/projects/BC-Group4/ethereum/contracts/Fundraiser.sol",
+          "file": "./Fundraiser.sol",
+          "scope": 150,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 110,
+        "name": "ImportDirective",
+        "src": "25:26:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            107
+          ],
+          "contractKind": "contract",
+          "documentation": "@dev Campaign Factory contract to generate Crowdfund smart contract to run Crowd fund",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            149
+          ],
+          "name": "FundraiserCreator",
+          "scope": 150
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "fundraisers",
+              "scope": 149,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "address[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 111,
+                    "name": "ElementaryTypeName",
+                    "src": "207:7:1"
+                  }
+                ],
+                "id": 112,
+                "name": "ArrayTypeName",
+                "src": "207:9:1"
+              }
+            ],
+            "id": 113,
+            "name": "VariableDeclaration",
+            "src": "207:28:1"
+          },
+          {
+            "attributes": {
+              "documentation": "@dev Create new campaign and send default manager is caller\n@param minContribution minimum money can contribute for project (in ETH)\n@param description description of campaign, purpose of campaign",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createFundraiser",
+              "scope": 149,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "minContribution",
+                      "scope": 139,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 114,
+                        "name": "ElementaryTypeName",
+                        "src": "502:4:1"
+                      }
+                    ],
+                    "id": 115,
+                    "name": "VariableDeclaration",
+                    "src": "502:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "description",
+                      "scope": 139,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 116,
+                        "name": "ElementaryTypeName",
+                        "src": "524:6:1"
+                      }
+                    ],
+                    "id": 117,
+                    "name": "VariableDeclaration",
+                    "src": "524:25:1"
+                  }
+                ],
+                "id": 118,
+                "name": "ParameterList",
+                "src": "501:49:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 119,
+                "name": "ParameterList",
+                "src": "558:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        121
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "fundraiser",
+                          "scope": 138,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "address",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 120,
+                            "name": "ElementaryTypeName",
+                            "src": "568:7:1"
+                          }
+                        ],
+                        "id": 121,
+                        "name": "VariableDeclaration",
+                        "src": "568:18:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "address",
+                          "type_conversion": true
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_Fundraiser_$107",
+                                  "typeString": "contract Fundraiser"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(address)",
+                              "value": "address"
+                            },
+                            "id": 122,
+                            "name": "ElementaryTypeNameExpression",
+                            "src": "589:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "contract Fundraiser",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address_payable",
+                                      "typeString": "address payable"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "function (address,uint256,string memory) returns (contract Fundraiser)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "Fundraiser",
+                                      "referencedDeclaration": 107,
+                                      "type": "contract Fundraiser"
+                                    },
+                                    "id": 123,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "602:10:1"
+                                  }
+                                ],
+                                "id": 124,
+                                "name": "NewExpression",
+                                "src": "598:14:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address payable"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 164,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 125,
+                                    "name": "Identifier",
+                                    "src": "626:3:1"
+                                  }
+                                ],
+                                "id": 126,
+                                "name": "MemberAccess",
+                                "src": "626:10:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 115,
+                                  "type": "uint256",
+                                  "value": "minContribution"
+                                },
+                                "id": 127,
+                                "name": "Identifier",
+                                "src": "650:15:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 117,
+                                  "type": "string memory",
+                                  "value": "description"
+                                },
+                                "id": 128,
+                                "name": "Identifier",
+                                "src": "679:11:1"
+                              }
+                            ],
+                            "id": 129,
+                            "name": "FunctionCall",
+                            "src": "598:102:1"
+                          }
+                        ],
+                        "id": 130,
+                        "name": "FunctionCall",
+                        "src": "589:112:1"
+                      }
+                    ],
+                    "id": 131,
+                    "name": "VariableDeclarationStatement",
+                    "src": "568:133:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (address) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 113,
+                                  "type": "address[] storage ref",
+                                  "value": "fundraisers"
+                                },
+                                "id": 132,
+                                "name": "Identifier",
+                                "src": "712:11:1"
+                              }
+                            ],
+                            "id": 134,
+                            "name": "MemberAccess",
+                            "src": "712:16:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 121,
+                              "type": "address",
+                              "value": "fundraiser"
+                            },
+                            "id": 135,
+                            "name": "Identifier",
+                            "src": "729:10:1"
+                          }
+                        ],
+                        "id": 136,
+                        "name": "FunctionCall",
+                        "src": "712:28:1"
+                      }
+                    ],
+                    "id": 137,
+                    "name": "ExpressionStatement",
+                    "src": "712:28:1"
+                  }
+                ],
+                "id": 138,
+                "name": "Block",
+                "src": "558:189:1"
+              }
+            ],
+            "id": 139,
+            "name": "FunctionDefinition",
+            "src": "476:271:1"
+          },
+          {
+            "attributes": {
+              "documentation": "@dev get all deployed campaigns",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getDeployedFundraisers",
+              "scope": 149,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 140,
+                "name": "ParameterList",
+                "src": "837:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 148,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 141,
+                            "name": "ElementaryTypeName",
+                            "src": "861:7:1"
+                          }
+                        ],
+                        "id": 142,
+                        "name": "ArrayTypeName",
+                        "src": "861:9:1"
+                      }
+                    ],
+                    "id": 143,
+                    "name": "VariableDeclaration",
+                    "src": "861:16:1"
+                  }
+                ],
+                "id": 144,
+                "name": "ParameterList",
+                "src": "860:18:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 144
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 113,
+                          "type": "address[] storage ref",
+                          "value": "fundraisers"
+                        },
+                        "id": 145,
+                        "name": "Identifier",
+                        "src": "896:11:1"
+                      }
+                    ],
+                    "id": 146,
+                    "name": "Return",
+                    "src": "889:18:1"
+                  }
+                ],
+                "id": 147,
+                "name": "Block",
+                "src": "879:35:1"
+              }
+            ],
+            "id": 148,
+            "name": "FunctionDefinition",
+            "src": "806:108:1"
+          }
+        ],
+        "id": 149,
+        "name": "ContractDefinition",
+        "src": "148:768:1"
+      }
+    ],
+    "id": 150,
+    "name": "SourceUnit",
+    "src": "0:917:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "660": {
+      "events": {},
+      "links": {},
+      "address": "0xd33d27183CfEFd0DC4aA9f5bC5aA4833106B84c0",
+      "transactionHash": "0xfb20ff5cbfed4c6979dc1946668f6a4a400a21b92e0f34c01ee882212edae2b8"
+    },
+    "1625500413613": {
+      "events": {},
+      "links": {},
+      "address": "0x7015D4988Cff89Fb8f02Db3E525956BC2109fE75",
+      "transactionHash": "0xdfceb511bccae5c0058a57a34334931a1f29e836bea535dcaa6139e63e89ae54"
+    },
+    "1625506061671": {
+      "events": {},
+      "links": {},
+      "address": "0xf48192060EdCa687aF98b7E4610328C430ceB3a0",
+      "transactionHash": "0x1634330e7368fa15eda73465658b1e1dada6d0ae70ce8132fe074473caf8342d"
+    }
+  },
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-07-05T19:53:19.675Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "details": "Campaign Factory contract to generate Crowdfund smart contract to run Crowd fund",
+    "methods": {
+      "createFundraiser(uint256,string)": {
+        "details": "Create new campaign and send default manager is caller",
+        "params": {
+          "description": "description of campaign, purpose of campaign",
+          "minContribution": "minimum money can contribute for project (in ETH)"
+        }
+      },
+      "getDeployedFundraisers()": {
+        "details": "get all deployed campaigns"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

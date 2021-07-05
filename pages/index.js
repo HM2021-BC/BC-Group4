@@ -6,18 +6,18 @@ import { Link } from '../routes';
 
 class CampaignIndex extends Component {
   static async getInitialProps() {
-    const campaigns = await factory.methods.getDeployedCampaigns().call();
+    const fundraisers = await factory.methods.getDeployedFundraisers().call();
     
-    return { campaigns };
+    return { fundraisers };
   }
 
   renderCampaigns() {
-    const items = this.props.campaigns.map(address => {
+    const items = this.props.fundraisers.map(address => {
       return {
         header: address,
         description: (
-          <Link route={`/campaigns/${address}`}>
-            <a>View Campaign</a>
+          <Link route={`/fundraisers/${address}`}>
+            <a>View Fundraisers</a>
           </Link>
         ),
         fluid: true
@@ -31,13 +31,13 @@ class CampaignIndex extends Component {
     return (
       <Layout>
         <div>
-          <h3>Open Campaigns</h3>
+          <h3>Open Fundraiser</h3>
 
-          <Link route="/campaigns/new">
+          <Link route="/fundraisers/new">
             <a>
               <Button
                 floated="right"
-                content="Create Campaign"
+                content="Create Fundraiser"
                 icon="add circle"
                 primary
               />

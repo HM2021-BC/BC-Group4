@@ -9,7 +9,7 @@ class CampaignNew extends Component {
   state = {
     minimumContribution: '',
     errorMessage: '',
-    loading: false
+    loading: false,
   };
 
   onSubmit = async event => {
@@ -20,7 +20,7 @@ class CampaignNew extends Component {
     try {
       const accounts = await web3.eth.getAccounts();
       await factory.methods
-        .createCampaign(this.state.minimumContribution, "Test creating campaign")
+        .createFundraiser(this.state.minimumContribution, "Create Fundraiser")
         .send({
           from: accounts[0]
         });
@@ -36,11 +36,11 @@ class CampaignNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create a Campaign</h3>
+        <h3>Create a Fundraiser</h3>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
-            <label>Minimum Contribution</label>
+            <label>Minimum Donation</label>
             <Input
               label="wei"
               labelPosition="right"

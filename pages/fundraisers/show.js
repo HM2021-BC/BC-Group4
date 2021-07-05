@@ -8,60 +8,59 @@ import { Link } from '../../routes';
 
 class CampaignShow extends Component {
   static async getInitialProps(props) {
-    const campaign = Campaign(props.query.address);
+    const fundraiser = Campaign(props.query.address);
 
-    const summary = await campaign.methods.getSummary().call();
+    const summary = await fundraiser.methods.getSummary().call();
 
     return {
       address: props.query.address,
       minimumContribution: summary[0],
       balance: summary[1],
-      requestsCount: summary[2],
-      approversCount: summary[3],
-      manager: summary[4]
+      numbersDonors: summary[2],
+      donee: summary[3]
     };
   }
 
   renderCards() {
     const {
       balance,
-      manager,
+      donee,
       minimumContribution,
-      requestsCount,
-      approversCount
+      donationGoal,
+      numbersDonors
     } = this.props;
 
     const items = [
       {
-        header: manager,
-        meta: 'Address of Manager',
+        header: donee,
+        meta: 'Address of the Recipient of the Donation',
         description:
-          'The manager created this campaign and can create requests to withdraw money',
+          'The Donee creates this Fundraiser to find people willing to Donate to his cause',
         style: { overflowWrap: 'break-word' }
       },
       {
         header: minimumContribution,
         meta: 'Minimum Contribution (wei)',
         description:
-          'You must contribute at least this much wei to become an approver'
+          'You must contribute at least this much wei'
       },
       {
-        header: requestsCount,
-        meta: 'Number of Requests',
+        header: donationGoal,
+        meta: 'Money that needs to be raise to achieve the Fundraisers  Goal',
         description:
-          'A request tries to withdraw money from the contract. Requests must be approved by approvers'
+          'Goal of the Donation in Money'
       },
       {
-        header: approversCount,
-        meta: 'Number of Approvers',
+        header: numbersDonors,
+        meta: 'Number of Supporters',
         description:
-          'Number of people who have already donated to this campaign'
+          'Number of people who have already donated to the Fundraiser'
       },
       {
         header: web3.utils.fromWei(balance, 'ether'),
-        meta: 'Campaign Balance (ether)',
+        meta: 'Fundraiser Balance (ether)',
         description:
-          'The balance is how much money this campaign has left to spend.'
+          'The balance is how much money this Funderaiser has Collected.'
       }
     ];
 
@@ -78,16 +77,6 @@ class CampaignShow extends Component {
 
             <Grid.Column width={6}>
               <ContributeForm address={this.props.address} />
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <Grid.Column>
-              <Link route={`/campaigns/${this.props.address}/requests`}>
-                <a>
-                  <Button primary>View Requests</Button>
-                </a>
-              </Link>
             </Grid.Column>
           </Grid.Row>
         </Grid>
