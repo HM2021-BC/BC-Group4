@@ -3,6 +3,7 @@ import { Card, Button } from 'semantic-ui-react';
 import factory from '../ethereum/factory';
 import Layout from '../components/Layout';
 import { Link } from '../routes';
+import { SocialIcon } from 'react-social-icons';
 
 class CampaignIndex extends Component {
   static async getInitialProps() {
@@ -16,9 +17,16 @@ class CampaignIndex extends Component {
       return {
         header: address,
         description: (
-          <Link route={`/fundraisers/${address}`}>
-            <a>View Fundraiser</a>
-          </Link>
+          <html>
+            <Link route={`/fundraisers/${address}`}>
+                <a>View Fundraiser</a>
+              </Link>
+              <div class="icons" style={{float:"right"}}>
+                <SocialIcon url="https://twitter.com/"/>
+                <SocialIcon url="https://facebook.com/"/>
+                <SocialIcon url="https://instagram.com/"/>
+              </div>
+          </html>
         ),
         fluid: true
       };

@@ -65,7 +65,7 @@ class CampaignNew extends Component {
           </Form.Field>
 
           <Form.Field>
-            <label>donation Goal</label>
+            <label>Donation Goal</label>
             <Input
               labelPosition="right"
               value={this.state.donationGoal}
