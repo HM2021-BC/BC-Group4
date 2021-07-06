@@ -20,6 +20,8 @@ contract Fundraiser{
     // description about your DonationGoal
     string public donationDescription;
 
+    uint public donationGoal;
+
     // a mapping list of supporter address, to check if address is supporter or not
     mapping(address=>bool) public donor;
 
@@ -28,8 +30,8 @@ contract Fundraiser{
     uint public numberDonors;
 
 
-    modifier DoneeOnly() {
-        require(msg.sender == donee);
+    modifier notDonee() {
+        require(msg.sender != donee);
         _;
     }
 
@@ -43,21 +45,26 @@ contract Fundraiser{
      * @param donation_reciever who is author and manage project
      * @param minContribution minimum money can contribute for project (in ETH)
      * @param description description of campaign, purpose of campaign
+     * @param goal description of campaign, purpose of campaign
      */
 
-    constructor(address donation_reciever, uint minContribution, string memory description) public {  
+    constructor(address donation_reciever, uint minContribution, string memory description, uint goal) public {  
         donee = donation_reciever;
         minimumContribution = minContribution;
         donationDescription = description;
+        donationGoal = goal;
     }
 
     /**
      * @dev payable of campaign, where supporter send Ethereum to contribute for campaign
      */
     function contribute() public payable {
+        require(msg.sender != donee);
         require(msg.value > minimumContribution);
+        if(!donor[msg.sender]) {
+            numberDonors++;
+        }
         donor[msg.sender] = true;
-        numberDonors++;
     }
 
     /**
@@ -72,13 +79,15 @@ contract Fundraiser{
      * @dev get summary information about campaign
      */
     function getSummary() public view returns (
-      uint, uint, uint, address
+      uint, uint, uint, address, string memory, uint
       ) {
         return (
           minimumContribution,
           address(this).balance,
           numberDonors,
-          donee
+          donee,
+          donationDescription,
+          donationGoal
         );
     }
 

@@ -15,11 +15,12 @@ contract FundraiserCreator {
     * @param minContribution minimum money can contribute for project (in ETH)
     * @param description description of campaign, purpose of campaign
     */
-    function createFundraiser(uint minContribution, string memory description) public {
+    function createFundraiser(uint minContribution, string memory description, uint donationGoal) public {
         address fundraiser = address (new Fundraiser(
             msg.sender,
             minContribution,
-            description
+            description,
+            donationGoal
         ));
 
         fundraisers.push(fundraiser);

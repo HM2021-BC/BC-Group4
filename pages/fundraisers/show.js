@@ -17,7 +17,9 @@ class CampaignShow extends Component {
       minimumContribution: summary[0],
       balance: summary[1],
       numbersDonors: summary[2],
-      donee: summary[3]
+      donee: summary[3],
+      donationDescription: summary[4],
+      donationGoal: summary[5]
     };
   }
 
@@ -27,7 +29,8 @@ class CampaignShow extends Component {
       donee,
       minimumContribution,
       donationGoal,
-      numbersDonors
+      numbersDonors,
+      donationDescription
     } = this.props;
 
     const items = [
@@ -57,6 +60,10 @@ class CampaignShow extends Component {
           'Number of people who have already donated to the Fundraiser'
       },
       {
+        header: donationDescription,
+        meta: 'decription of the Fundraiser',
+      },
+      {
         header: web3.utils.fromWei(balance, 'ether'),
         meta: 'Fundraiser Balance (ether)',
         description:
@@ -70,7 +77,7 @@ class CampaignShow extends Component {
   render() {
     return (
       <Layout>
-        <h3>Campaign Show</h3>
+        <h3>Fundraiser details</h3>
         <Grid>
           <Grid.Row>
             <Grid.Column width={10}>{this.renderCards()}</Grid.Column>

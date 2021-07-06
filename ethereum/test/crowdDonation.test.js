@@ -11,7 +11,8 @@ before(async () => {
     
 	var minContribution = '10000';
 	var description = 'test Fundraiser App';
-	await fundraiserCreator.createFundraiser(minContribution, description);
+	var donationGoal = '6942069'
+	await fundraiserCreator.createFundraiser(minContribution, description, donationGoal);
    	 
 	FundraiserAdresses = await fundraiserCreator.getDeployedFundraisers.call();
     
@@ -38,8 +39,13 @@ contract("Fundraiser test", (accounts) => {
     	var description = await fundraiser.donationDescription.call();
     	assert.equal(description, 'test Fundraiser App');
 	});
+
+	it('has a donation Goal', async () => {
+    	var goal = await fundraiser.donationGoal.call();
+    	assert.equal(goal, '6942069');
+	});
     
-	it('allows donatiors with minimum contribution', async () => {
+	it('allows donators with minimum contribution', async () => {
     	var newDonator = accounts[1];
     	var newDonation = '10000000001';
     	await fundraiser.donate({from: newDonator, value: newDonation});

@@ -17,7 +17,7 @@ class CampaignIndex extends Component {
         header: address,
         description: (
           <Link route={`/fundraisers/${address}`}>
-            <a>View Fundraisers</a>
+            <a>View Fundraiser</a>
           </Link>
         ),
         fluid: true
