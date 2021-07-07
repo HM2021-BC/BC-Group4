@@ -4,21 +4,34 @@ import factory from '../ethereum/factory';
 import Layout from '../components/Layout';
 import { Link } from '../routes';
 import { SocialIcon } from 'react-social-icons';
+import Campaign from '../ethereum/campaign';
 
 class CampaignIndex extends Component {
   static async getInitialProps() {
     const fundraisers = await factory.methods.getDeployedFundraisers().call();
+
+    const funds = [];
+
+    for (let address of fundraisers) {
+      const fundraiser = Campaign(address);
+      const summary = await fundraiser.methods.getSummary().call();
+      let item = {
+        title: summary["4"],
+        address: address,
+      }
+      funds.push(item);
+    }
     
-    return { fundraisers };
+    return { fundraisers, funds };
   }
 
   renderCampaigns() {
-    const items = this.props.fundraisers.map(address => {
+    const items = this.props.funds.map(item => {
       return {
-        header: address,
+        header: item.title,
         description: (
           <html>
-            <Link route={`/fundraisers/${address}`}>
+            <Link route={`/fundraisers/${item.address}`}>
                 <a>View Fundraiser</a>
               </Link>
               <div class="icons" style={{float:"right"}}>
