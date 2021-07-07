@@ -8,7 +8,6 @@ import { Link } from '../routes';
 class CampaignIndex extends Component {
   static async getInitialProps() {
     const fundraisers = await factory.methods.getDeployedFundraisers().call();
-    
     return { fundraisers };
   }
 
