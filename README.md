@@ -25,29 +25,28 @@ Another advantage of a blockchain is that there is no central server where all d
 ### Technologies
 
 * Ethereum
-* [Solidity] (https://docs.soliditylang.org/en/v0.8.6/)
-* [Truffle] (https://www.trufflesuite.com/)
-* [React] (https://reactjs.org/)
-* [Node.js] (https://nodejs.org/en/)
-* [Morpheus Labs SEED] (https://www.morpheuslabs.io/)
-* [MetaMask] (https://metamask.io/)
+* [Solidity](https://docs.soliditylang.org/en/v0.8.6/)
+* [Truffle](https://www.trufflesuite.com/)
+* [React](https://reactjs.org/)
+* [Node.js](https://nodejs.org/en/)
+* [Morpheus Labs SEED](https://www.morpheuslabs.io/)
+* [MetaMask](https://metamask.io/)
 
 <!-- USAGE EXAMPLES -->
 ## Usage in Morpheus Labs SEED
 
-### Run tests for the contracts (optional)
 1. Navigate in the ethereum directory: `cd BC-Group4/ethereum`
 2. Start truffle development environment: `truffle develop`
 3. Start tests: `truffle test`
 
-### Deploy contracts in Morpheus Labs Ethereum Network
-1. Navigate in the ethereum directory: `cd BC-Group-3/ethereum`
+### Deploy contracts
+1. Navigate in the ethereum directory: `cd BC-Group4/ethereum`
 2. Deploy contracts: `truffle migrate --network private_poa`
 3. Copy the contact address of the MarketplaceCreator.
 4. Insert the contact address into the factory.js file in the ethereum directory.
 
 ### Run the React Frontend
-1. Navigate in the root directory: `cd BC-Group-3`
+1. Navigate in the root directory: `cd BC-Group4`
 2. Install dependencies: `npm install`
 3. Start frontend: `node server.js`
 
