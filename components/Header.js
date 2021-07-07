@@ -4,9 +4,14 @@ import { Link } from '../routes';
 
 export default () => {
   return (
-    <Menu style={{ marginTop: '10px' }}>
+    <div style={{ margin: '20px' }}>
+      <div style={{textAlign: "center", fontSize: "3rem", margin: "3rem"}}>
+       Helping Hand
+      </div>
+    <Menu>
+
       <Link route="/">
-        <a className="item">DApp Donation</a>
+        <a className="item">Donations</a>
       </Link>
 
       <Menu.Menu position="right">
@@ -18,6 +23,8 @@ export default () => {
           <a className="item">+</a>
         </Link>
       </Menu.Menu>
+
     </Menu>
+    </div>
   );
 };
