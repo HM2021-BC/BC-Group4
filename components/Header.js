@@ -4,10 +4,10 @@ import { Link } from '../routes';
 
 export default () => {
   return (
-    <div style={{ margin: '20px' }}>
-      <div style={{textAlign: "center", fontSize: "3rem", margin: "3rem"}}>
-       Helping Hand
-      </div>
+    <div style={{ margin: '40px', width: '100%', textAlign: "center" }}>
+      <a href="/" style={{ display: "inline-block", fontSize: "3rem" }}>
+      Helping Hand
+      </a>
     <Menu>
 
       <Menu.Menu position="right">
