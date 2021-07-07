@@ -31,7 +31,7 @@ class CampaignIndex extends Component {
     return (
       <Layout>
         <div>
-          <h3>Open Fundraiser</h3>
+          <h1>Open Fundraiser</h1>
 
           <Link route="/fundraisers/new">
             <a>

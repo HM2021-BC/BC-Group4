@@ -31,16 +31,16 @@ class CampaignIndex extends Component {
         header: item.title,
         description: (
           <html>
-            <Link route={`/fundraisers/${item.address}`}>
-                <a>View Fundraiser Details</a>
-              </Link>
-              <div class="icons" style={{float:"right"}}>
-                <SocialIcon url="https://twitter.com/"/>
-                <div style={{display:"inline-block", width: "5px"}}></div>
-                <SocialIcon url="https://facebook.com/"/>
-                <div style={{display:"inline-block", width: "5px"}}></div>
-                <SocialIcon url="https://instagram.com/"/>
-              </div>
+            <Link>
+                <a href={`/fundraisers/${item.address}`}>View Fundraiser Details</a>
+            </Link>
+            <div class="icons" style={{float:"right"}}>
+              <SocialIcon url="https://twitter.com/"/>
+              <div style={{display:"inline-block", width: "5px"}}></div>
+              <SocialIcon url="https://facebook.com/"/>
+              <div style={{display:"inline-block", width: "5px"}}></div>
+              <SocialIcon url="https://instagram.com/"/>
+            </div>
           </html>
         ),
         fluid: true
@@ -54,19 +54,7 @@ class CampaignIndex extends Component {
     return (
       <Layout>
         <div>
-          <h3>Overview Fundraisers</h3>
-
-          <Link route="/fundraisers/new">
-            <a>
-              <Button
-                floated="right"
-                content="Create Fundraiser"
-                icon="add circle"
-                primary
-              />
-            </a>
-          </Link>
-
+          <h1 style={{marginTop:"1%", color: "#1e70bf"}}>Open Fundraiser</h1>
           {this.renderCampaigns()}
         </div>
       </Layout>

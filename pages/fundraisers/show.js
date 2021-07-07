@@ -48,7 +48,7 @@ class CampaignShow extends Component {
           'The minimum amount that must be donated.'
       },
       {
-        header: donationGoal,
+        header: donationGoal + " (wei)",
         meta: 'Donation Goal',
         description:
           'The amount of money that must be reached to fulfil the purpose of the donation.'
@@ -77,11 +77,21 @@ class CampaignShow extends Component {
   render() {
     return (
       <Layout>
-        <h3>Fundraiser Details</h3>
+        <div>
+        <h1 style={{marginTop:"1%", color: "#1e70bf"}}>Fundraiser Details</h1>
+          <a>
+          <Button
+            onClick={() =>  navigator.clipboard.writeText(document.getElementsByClassName("header")[0].innerHTML)}
+            content="Copy Address"
+            primary
+            style={{lineHeight:"2px", marginTop:"-1%"}}
+          />
+        </a>
+        </div>
         <Grid>
           <Grid.Row>
             <Grid.Column width={10}>{this.renderCards()}</Grid.Column>
-
+              
             <Grid.Column width={6}>
               <ContributeForm address={this.props.address} />
             </Grid.Column>
