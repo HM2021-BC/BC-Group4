@@ -10,10 +10,6 @@ export default () => {
       </div>
     <Menu>
 
-      <Link route="/">
-        <a className="item">Donations</a>
-      </Link>
-
       <Menu.Menu position="right">
         <Link route="/">
           <a className="item">Fundraisers</a>

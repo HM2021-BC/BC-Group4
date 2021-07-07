@@ -32,11 +32,13 @@ class CampaignIndex extends Component {
         description: (
           <html>
             <Link route={`/fundraisers/${item.address}`}>
-                <a>View Fundraiser</a>
+                <a>View Fundraiser Details</a>
               </Link>
               <div class="icons" style={{float:"right"}}>
                 <SocialIcon url="https://twitter.com/"/>
+                <div style={{display:"inline-block", width: "5px"}}></div>
                 <SocialIcon url="https://facebook.com/"/>
+                <div style={{display:"inline-block", width: "5px"}}></div>
                 <SocialIcon url="https://instagram.com/"/>
               </div>
           </html>
@@ -52,7 +54,7 @@ class CampaignIndex extends Component {
     return (
       <Layout>
         <div>
-          <h3>Open Fundraiser</h3>
+          <h3>Overview Fundraisers</h3>
 
           <Link route="/fundraisers/new">
             <a>

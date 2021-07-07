@@ -36,38 +36,38 @@ class CampaignShow extends Component {
     const items = [
       {
         header: donee,
-        meta: 'Address of the Recipient of the Donation',
+        meta: 'Address of the donation recipient.',
         description:
-          'The Donee creates this Fundraiser to find people willing to Donate to his cause',
+          'The donor creates this donation appeal to find people who are willing to donate to his cause.',
         style: { overflowWrap: 'break-word' }
       },
       {
         header: minimumContribution,
-        meta: 'Minimum Contribution (wei)',
+        meta: 'Minimum Contribution (in wei)',
         description:
-          'You must contribute at least this much wei'
+          'The minimum amount that must be donated.'
       },
       {
         header: donationGoal,
-        meta: 'Money that needs to be raise to achieve the Fundraisers  Goal',
+        meta: 'Donation Goal',
         description:
-          'Goal of the Donation in Money'
+          'The amount of money that must be reached to fulfil the purpose of the donation.'
       },
       {
         header: numbersDonors,
         meta: 'Number of Supporters',
         description:
-          'Number of people who have already donated to the Fundraiser'
+          'The number of people who have already participated in the Fundraiser.'
       },
       {
         header: donationDescription,
-        meta: 'decription of the Fundraiser',
+        meta: 'The Fundraiser description.',
       },
       {
         header: web3.utils.fromWei(balance, 'ether'),
-        meta: 'Fundraiser Balance (ether)',
+        meta: 'Fundraiser Balance (in ether)',
         description:
-          'The balance is how much money this Funderaiser has Collected.'
+          'The balance indicates how much money has been collected so far.'
       }
     ];
 
@@ -77,7 +77,7 @@ class CampaignShow extends Component {
   render() {
     return (
       <Layout>
-        <h3>Fundraiser details</h3>
+        <h3>Fundraiser Details</h3>
         <Grid>
           <Grid.Row>
             <Grid.Column width={10}>{this.renderCards()}</Grid.Column>
